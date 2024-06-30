@@ -1,0 +1,43 @@
+.weather-forecast {
+  &__title {
+    font-size: 12px;
+    margin: 0 0 16px;
+  }
+
+  &__day {
+    display: flex;
+    align-items: center;
+  }
+
+  &__day-label,
+  &__day-sunshine,
+  &__day-temprature {
+    width: 33.3%;
+    font-size: 20px;
+  }
+
+  &__day-label,
+  &__day-temprature {
+    margin: 10px 0;
+  }
+
+  &__day-sunshine {
+    text-align: center;
+  }
+
+  &__day-temprature {
+    text-align: center;
+
+    span {
+      display: inline-block;
+    }
+
+    &__value {
+      text-align: center;
+    }
+
+    &__slash {
+      margin: 0 7px;
+    }
+  }
+}

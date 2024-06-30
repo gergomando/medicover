@@ -1,0 +1,21 @@
+.current-weather {
+    &__city-name {
+        font-size: 12px;
+        margin: 0 0 4px;
+        background: transparent;
+        border: 0;
+        color: white;
+        cursor: pointer;
+    }
+
+    &__temprature {
+        font-size: 48px;
+        font-weight: normal;
+        margin: 0 0 4px;
+    }
+
+    &__information {
+        font-size: 16px;
+        margin: 0;
+    }
+}
