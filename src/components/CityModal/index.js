@@ -19,15 +19,18 @@ function CityModal({
   }
 
   const searchForCities = event => {
-    fetch(getCityApiUrl(event.target.value))
+    const value = event.target.value;
+    setSearchTerm(value);
+
+    fetch(getCityApiUrl(value))
       .then(response => response.json())
-      .then(data => setCities((data || {}).results))
+      .then(data => setCities((data || {}).results || []))
       .catch(error => console.error(error));
   }
 
   const selectCity = event => {
     const city = cities.find(city => city.id === parseInt(event.target.value));
-    
+
     if (!!city) {
       setSelectedCity(city);
       setModalIsOpen(false);
@@ -54,15 +57,16 @@ function CityModal({
         }
         <form onSubmit={event => event.preventDefault()}>
           <h4 className='city-modal__title'>
-            Gépeld be kedvenc városod nevét.
+            Keress rá kedvenc településed nevére, hogy láthasd az opciókat!
           </h4>
           <input 
             className="city-modal__search-input"
             name="cityName"
             type="text"
+            value={searchTerm}
             onChange={searchForCities}
           />
-          { Array.isArray(cities) && !!cities.length &&
+          { Array.isArray(cities) &&
             <>
               <h4>Kérlek válassz az alábbi listából:</h4>
               <select 
@@ -71,7 +75,9 @@ function CityModal({
                 value={selectedCity?.id}
                 onChange={selectCity}
                 >
-                <option value="">-</option>
+                <option value="">
+                  { !!cities.length ? '- válassz az alábbbi opciók közül -' : 'nincs találat' }
+                  </option>
                 { cities.map(city =>
                   <option value={city.id} key={city.id}>
                     { city.name  } - { city.country }
