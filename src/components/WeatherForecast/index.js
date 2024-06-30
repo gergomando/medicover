@@ -16,8 +16,8 @@ function WeatherForecast({ weatherInformation }) {
             </p>
 
             <div className="weather-forecast__day-sunshine">
-              <img height="25" src={weatherInformation.rain_sum[dateIndex] > 1 ? '/images/rain.svg' : '/images/sun.svg'} />
-              <span>{ Math.round(weatherInformation.rain_sum[dateIndex]) } mm</span>
+              <img height="25" src={weatherInformation.precipitation_probability_max[dateIndex] > 20 ? '/images/rain.svg' : '/images/sun.svg'} />
+              <span>{ Math.round(weatherInformation.precipitation_probability_max[dateIndex]) } %</span>
             </div>
 
             <p className="weather-forecast__day-temprature">

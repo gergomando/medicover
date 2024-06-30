@@ -32,6 +32,7 @@ function CityModal({
       setSelectedCity(city);
       setModalIsOpen(false);
       loadWeatherInformation(city.latitude, city.longitude);
+      localStorage.setItem('city', JSON.stringify(city));
     }
   }
 
@@ -51,7 +52,7 @@ function CityModal({
             x
         </button>
         }
-        <form>
+        <form onSubmit={event => event.preventDefault()}>
           <h4 className='city-modal__title'>
             Gépeld be kedvenc városod nevét.
           </h4>

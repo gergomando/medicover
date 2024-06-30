@@ -3,15 +3,9 @@ import Chart from "react-apexcharts";
 import { DAYS } from '../../constants';
 
 function WeatherChart({ weatherInformation }) {
+  const data = weatherInformation ? weatherInformation.temperature_2m_max.map(temp => Math.round(temp)) : [];
   const chartData = {  
-    series: [
-      {
-        data: weatherInformation ? weatherInformation.temperature_2m_max.map(temp => Math.round(temp)) : []
-      },
-      {
-        data: weatherInformation ? weatherInformation.temperature_2m_min.map(temp => Math.round(temp)) : []
-      }
-    ],
+    series: [{ data }],
     options: {
       chart: {
         height: 350,
@@ -67,8 +61,8 @@ function WeatherChart({ weatherInformation }) {
             fontWeight: 400
           }
         },
-        min: 0,
-        max: 40
+        min: Math.min(...data) - 2,
+        max: Math.max(...data) + 2
       },
       legend: {
         show: false,
