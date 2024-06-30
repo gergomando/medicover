@@ -40,7 +40,7 @@ function CityModal({
       <Modal
         ariaHideApp={false}
         isOpen={modalIsOpen}
-        contentLabel="Example Modal"
+        contentLabel="Település-választó ablak"
         className="city-modal__wrapper"
       >
         { selectedCity && 
