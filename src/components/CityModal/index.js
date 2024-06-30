@@ -56,7 +56,8 @@ function CityModal({
         </button>
         }
         <form onSubmit={event => event.preventDefault()}>
-          <h4 className='city-modal__title'>
+          <img height="35" className="city-modal__image" src="/images/sun.svg" />
+          <h4 className="city-modal__text">
             Keress rá kedvenc településed nevére, hogy láthasd az opciókat!
           </h4>
           <input 
@@ -68,7 +69,9 @@ function CityModal({
           />
           { Array.isArray(cities) &&
             <>
-              <h4>Kérlek válassz az alábbi listából:</h4>
+              <h4 className="city-modal__text">
+                Kérlek válassz az alábbi listából:
+              </h4>
               <select 
                 className="city-modal__select" 
                 name="city"

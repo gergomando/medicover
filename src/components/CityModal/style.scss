@@ -9,7 +9,7 @@
     margin-right: -50%;
     transform: translate(-50%, -50%);
     outline: 0;
-    padding: 36px;
+    padding: 24px 36px 36px;
     border-radius: 24px;
     background: rgb(97 161 245 / 69%);
     color: white;
@@ -32,8 +32,13 @@
     color: white;
   }
 
-  &__title {
+  &__image {
+    margin: 0 auto 12px;
+  }
+
+  &__text {
     margin: 0 0 12px;
+    font-weight: normal;
   }
 
   &__search-input,
@@ -48,6 +53,6 @@
   }
 
   &__search-input {
-    margin-bottom: 12px;
+    margin-bottom: 24px;
   }
 }
