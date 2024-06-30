@@ -23,6 +23,14 @@
 
   &__day-sunshine {
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      width: 90px;
+      display: inline-block;
+    }
   }
 
   &__day-temprature {

@@ -48,7 +48,7 @@ function CityModal({
           className="city-modal__close-button" 
           onClick={() => setModalIsOpen(false)}
           >
-            close
+            x
         </button>
         }
         <form>

@@ -21,16 +21,22 @@ function App() {
   return (
     <div className="app">
       <div className="container">
-        <div className="sidebar">
-          <CurrentWeather
-            selectedCity={selectedCity}
-            weatherInformation={weatherInformation.current}
-            setModalIsOpen={setModalIsOpen}
-          />
+        <div className="weather">
+          <div className="sidebar">
+            <CurrentWeather
+              selectedCity={selectedCity}
+              weatherInformation={weatherInformation.current}
+              setModalIsOpen={setModalIsOpen}
+            />
+          </div>
+          <div className="main-content">
+            <WeatherForecast weatherInformation={weatherInformation.daily} />
+            <WeatherChart weatherInformation={weatherInformation.daily} />
+          </div>
         </div>
-        <div className="main-content">
-          <WeatherForecast weatherInformation={weatherInformation.daily} />
-          <WeatherChart weatherInformation={weatherInformation.daily} />
+
+        <div className='author'>
+          Mándó Gergő
         </div>
       </div>
       <CityModal

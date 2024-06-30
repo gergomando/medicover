@@ -16,7 +16,8 @@ function WeatherForecast({ weatherInformation }) {
             </p>
 
             <div className="weather-forecast__day-sunshine">
-              <span>{ weatherInformation.rain_sum[dateIndex] } mm</span>
+              <img height="25" src={weatherInformation.rain_sum[dateIndex] > 1 ? '/images/rain.svg' : '/images/sun.svg'} />
+              <span>{ Math.round(weatherInformation.rain_sum[dateIndex]) } mm</span>
             </div>
 
             <p className="weather-forecast__day-temprature">

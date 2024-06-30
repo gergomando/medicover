@@ -6,6 +6,10 @@
         border: 0;
         color: white;
         cursor: pointer;
+
+        &:hover {
+            color: #fde150;
+        }
     }
 
     &__temprature {

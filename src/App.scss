@@ -11,10 +11,14 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 40px 36px;
+}
+
+.weather {
   display: flex;
 }
 
-.sidebar {
+.sidebar,
+.author {
   width: 30%;
   padding-right: 20px;
 }
@@ -24,16 +28,27 @@
   max-width: 600px;
 }
 
+.author {
+  text-align: center;
+  font-size: 12px;
+}
 
 @media screen and (max-width: 768px) {
   .container {
-    padding: 0 24px;
+    padding: 24px;
+  }
+
+  .weather {
     flex-direction: column;
   }
 
-  .sidebar {
+  .sidebar, 
+  .author {
     width: 100%;
     padding-right: 0;
+  }
+
+  .sidebar {
     margin: 50px 0;
   }
 

@@ -60,7 +60,7 @@ function WeatherChart({ weatherInformation }) {
       },
       yaxis: {
         title: {
-          text: 'Temperature',
+          text: 'Hőmérséklet',
           style: {
             color: 'white',
             fontSize: '20px',
